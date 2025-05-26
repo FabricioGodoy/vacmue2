@@ -1,0 +1,146 @@
+
+  
+.header {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 15vh;
+    background-color: #172933;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+ .logo {
+    width: 20vw;
+    height: auto;
+    padding: 3px;
+    margin: 0px 0px 0px 13px;
+    border-radius: 15px;
+    
+}
+/* .logo:hover {
+    transform: scale(1.03); 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s;
+    
+} */
+
+/* iconos contacto */
+.contact-buttons {
+    position: absolute;
+    bottom: 10px;
+    right: 35px;
+    display: flex;
+    gap: 10px;
+}
+
+.contact-icon {
+    width: 3vw;
+    height: 5vh;
+    margin: 3px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.iconosContactoBN{
+    display: none;
+}
+
+.contact-icon:hover {
+    transform: scale(1.1);
+}
+.contact-icon img{
+    width: 2vw;
+    height: 3vh;
+}
+
+/* fin iconos contacto */
+
+
+@media (max-width: 1200px) {
+    .logo {
+        width: 25vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    .logo {
+        width: 30vw;
+    }
+    .contact-icon {
+        width: 2vw;
+        height: 4vh;
+        margin: 1vw;
+    
+    }
+    .contact-icon img{
+        width: 100vw;
+        height: 3vh;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .logo {
+        width: 40vw;
+    }
+    .contact-icon {
+        margin: 1vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo {
+        width: 50vw;
+    }
+    .contact-icon {
+        bottom: -5px;
+        right: 15px;
+        gap: 1px;
+    }
+    .contact-icon .iconosContactoBN{
+        display: flex;
+        width: 5vw;
+        height: 4vh;
+        border-radius: 35%;
+        margin: 0;
+    }
+    .iconosContacto{
+        display: none;
+    }
+    .correoIconBN{
+        height: 5vh !important;
+    }
+    .contact-icon {
+        margin: 1.5vw;
+    }
+}
+@media (max-width: 430px) {
+    .contact-buttons {
+        bottom: -5px;
+        right: 15px;
+        gap: 1px;
+
+    }
+    .contact-icon  .iconosContactoBN{
+        width: 7vw;
+        height: 3vh;
+        margin: 20px !important;
+    }
+    .correoIconBN{
+        height: 4vh !important;
+    }
+    .contact-icon {
+        margin: 5px 3vw;
+    }
+}
