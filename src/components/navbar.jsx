@@ -44,8 +44,8 @@ export const NavBar = () => {
       <nav className={`nav-links ${menuOpen ? 'active' : ''}`}>
         <a href="/" className="nav-link">Inicio</a>
         <a href="#nosotros" className="nav-link">Sobre Nosotros</a>
-        <a href="/services" className="nav-link">Servicios</a>
-        <a href="/contact" className="nav-link">Contacto</a>
+        <a href="#servicios" className="nav-link">Servicios</a>
+        <a href="#contactos"className="nav-link">Contacto</a>
       </nav>
     </header>
   );

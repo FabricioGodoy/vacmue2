@@ -7,7 +7,6 @@ export const SobreNosotros = () => {
        
         <div className='contenido'>
             <h1>NOSOTROS</h1>
-                <br className='lineaAmarilla'/>
 
             <div>
                 <p>A fines de la década del 90, iniciamos nuestra historia, incursionando en obras de electricidad, fibra óptica y arquitectura, participando en proyectos con altos niveles de exigencia y cumplimiento de estándares internacionales.

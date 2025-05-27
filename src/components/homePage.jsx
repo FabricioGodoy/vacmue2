@@ -1,10 +1,11 @@
 import React from 'react';
 import { SobreNosotros } from '../components/sobreNosotros'
+import { useEffect, useState } from 'react';
 
 // Componente individual para cada servicio
 const ServiceCard = ({ title, services, image }) => (
   <div className="divArticle">
-    <img width="24" height="24" src={image} alt={title} />
+    <img width="80" height="80" src={image} alt={title} />
     <h3>{title}</h3>
     <ul>
       {services.map((service, index) => (
@@ -49,69 +50,27 @@ const ServiceCard2 = ({ title, services, image }) => (
 export const HomePage = () => {
   const servicesData = [
     {
-      title: 'macOS',
-      image: 'https://img.icons8.com/material-outlined/24/laptop.png', 
+      title: 'Diseño & Ingenieria',
+      image: '../../img/iconos/genteReunida.jpg', 
       services: [
-        'Diagnóstico de fallos',
-        'Reparación de Logic Board y Displays',
-        'Atención de equipos mojados',
-        'Cambio de batería',
-        'Actualización de macOS y optimización de Soft',
-        'Upgrade de macOS equipos vintage',
-        'Instalación de software',
-        'Desbloqueo de iCloud'
+        'Ingeniería Conceptual',
+        'Ingeniería Básica',
+        'Ingeniería de Detalle',
+        'Integración de Diseño & Ingeniería'
       ]
     },
     {
-      title: 'iOS',
-      image: 'https://img.icons8.com/material-rounded/24/smartphone.png', 
+      title: 'Gestión Ambiental',
+      image: '../../img/iconos/lamparaReciclar.jpg', 
       services: [
-        'Actualizaciones de software',
-        'Reparación de placa',
-        'Cambio de módulo de pantalla y batería',
-        'Migraciones de información de usuario',
-        'Swap entre Android y iOS'
+        'Gestión Ambiental (Environmental Management)'
       ]
     },
     {
-      title: 'Equipos Windows',
-      image: 'https://img.icons8.com/ios-glyphs/30/windows-10.png', 
+      title: 'Ejecución & Construcción',
+      image: '../../img/iconos/rayoEngranaje.jpg', 
       services: [
-        'Nos especializamos en Notebooks y All in One desktops',
-        'Diagnóstico de fallos',
-        'Reparacion de placa',
-        'Reparación de bisagras y displays de notebooks',
-        'Atención a equipos mojados',
-        'Instalación y actualización de Software',
-        'Instalación y reparación de Sistema Opertivo',
-        'Upgrades de hardware',
-        'Gamming',
-        'Asesoría informática'
-      ]
-    },
-    {
-      title: 'Canales de Reparación',
-      image: 'https://img.icons8.com/fluency-systems-regular/50/conference-call--v1.png', 
-      services: [
-        'Atención especializada',
-        'Venta de repuestos y accesorios',
-        'Atención mayorista',
-        'Pedidos especiales',
-        'Soporte técnico de segundo y tercer nivel'
-      ]
-    },
-    {
-      title: 'Empresas',
-      image: 'https://img.icons8.com/ios/50/handshake--v1.png', 
-      services: [
-        'Nos especializamos en brindar consultoría informática para Agencias de Medios, Espectáculos, Start ups entre otros del segmento SMB'
-      ]
-    },
-    {
-      title: 'Mobilesentrix',
-      image: 'https://img.icons8.com/sf-regular/48/search.png', 
-      services: [
-        'Somos distribuidor autorizado de productos Ampsentrix & Mobile'
+        'EPC (Engineering, Procurement and Constructions).'
       ]
     }
   ];
@@ -120,7 +79,7 @@ export const HomePage = () => {
       title: 'Domicilio',
       image: 'https://img.icons8.com/fluency-systems-filled/50/map-marker.png', 
       services: [
-        'Av. Cabildo 2847 - Ciudad Autónoma de Buenos Aires'
+        'Presidente Guido 1999, uenos Aires (1119) Argentina'
       ]
     },
     {
@@ -132,21 +91,47 @@ export const HomePage = () => {
     },
   ]
 
+const [currentSlide, setCurrentSlide] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentSlide((prev) => (prev + 1) % 3); // 3 slides
+  }, 5000); // cambia cada 5 segundos
+  return () => clearInterval(interval);
+}, []);
+
   return (
     <div className='contenedorPadreHomePage'>
-      {/* <div className="imgContainer">
-        <img src="../../img/pcNegra.jpg" alt="pcNegra" className="imgPcNegra" />
-        <div className="textOverlay">
-          <div className="typingEffect">Soluciones Informáticas y Tecnológicas</div>
-          <br />
-          <p className='typingEffect-2'>¡Llevamos el concepto de <em>servicio</em> a otro nivel!</p>
+      <div className="carousel">
+        <div className="slides" style={{ transform: `translateX(-${currentSlide * 100}vw)` }}>
+
+          <div className="slide active">
+            <img src="../../img/carrousel/canosDia.png" alt="Caños de día" />
+            <div className="textOverlay">
+              <h2 className="slideTitle">Distribución de Energía</h2>
+            </div>
+          </div>
+          <div className="slide">
+            <img src="../../img/carrousel/plantaVME.png" alt="Planta VME" />
+            <div className="textOverlay">
+              <h2 className="slideTitle">Procesamiento de Gas Natural</h2>
+            </div>
+          </div>
+          <div className="slide">
+            <img src="../../img/carrousel/canosNoche.png" alt="Caños de noche" />
+            <div className="textOverlay">
+              <h2 className="slideTitle">Conectividad Nocturna</h2>
+            </div>
+          </div>
         </div>
-      </div> */}
+      </div>
+
+<br/>
 
       <SobreNosotros />
 
       
-      <h2 className="typingTitle">Nuestros servicios</h2>
+      <h2  id='servicios' className='typingTitle'>SERVICIOS</h2>
       <div className='ordenarArticle'>
         {servicesData.map((service, index) => (
           <ServiceCard
@@ -158,7 +143,7 @@ export const HomePage = () => {
         ))}
       </div>
     
-      <h2 className="typingTitle">Datos de contacto</h2>
+      <h2  id='contactos' className='typingTitle'>Datos de contacto</h2>
       <div className='ordenarArticle2'>
         {datosContacto.map((service, index) => (
           <ServiceCard2
