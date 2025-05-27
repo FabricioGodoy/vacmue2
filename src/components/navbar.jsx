@@ -1,37 +1,52 @@
-import React from 'react'
-import './styles/navBar.css'
+import React, { useState, useEffect, useRef } from 'react';
+import './styles/navBar.css';
 
 export const NavBar = () => {
-  window.addEventListener("scroll", function() {
-    var header = document.querySelector("header");
-    header.classList.toggle("sticky", window.scrollY > 0);
-  });
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef(null);
 
-  
+  // Cierra el menú al hacer scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (menuOpen) setMenuOpen(false);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [menuOpen]);
+
+  // Cierra el menú al hacer click afuera
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
-    <header className="header">
-    <a href="/">
-      <img src="../../img/logoSinFondo.png" alt="logo" className="logo" />
-    </a>
-   
-    <div className="contact-buttons">
-  
-      <a href="https://www.facebook.com/share/sd8ok8dScFDe35aE/?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer" className="contact-icon">
-       <img className='iconosContacto' src="https://img.icons8.com/ios-filled/50/FFFFFF/facebook-new.png" alt="facebook"></img>
-       <img className='iconosContactoBN'src="https://img.icons8.com/ios-filled/50/FFFFFF/facebook-new.png" alt="facebookBN"></img>
-      </a>
-    
-      <a href="https://www.instagram.com/simpletecnoapp?igsh=cHc0aWkxNWZoYTd1" target="_blank" rel="noopener noreferrer" className="contact-icon">
-       <img className='iconosContacto' src="https://img.icons8.com/ios-filled/50/FFFFFF/instagram-new--v1.png" alt="instagram"></img>
-       <img className='iconosContactoBN'src="https://img.icons8.com/ios-filled/50/FFFFFF/instagram-new--v1.png" alt="instagramBN"></img>
-      </a>
-  
-      <a href="mailto:contacto@simpletecno.com.ar" className="contact-icon">
-       <img className='iconosContacto' src="https://img.icons8.com/ios-glyphs/30/FFFFFF/secured-letter--v1.png" alt="mail"></img>
-       <img className='iconosContactoBN' src="https://img.icons8.com/ios-glyphs/30/FFFFFF/secured-letter--v1.png" alt="mailBN"></img>
-      </a>
-  
-    </div>
-  </header>
+    <header className="header" ref={navRef}>
+      <div className="header-top">
+        <a href="/">
+          <img src="../../img/VACAMUERTA.avif" alt="logo" className="logo" />
+        </a>
+        <div
+          className={`hamburger ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+
+      <nav className={`nav-links ${menuOpen ? 'active' : ''}`}>
+        <a href="/" className="nav-link">Inicio</a>
+        <a href="#nosotros" className="nav-link">Sobre Nosotros</a>
+        <a href="/services" className="nav-link">Servicios</a>
+        <a href="/contact" className="nav-link">Contacto</a>
+      </nav>
+    </header>
   );
 };

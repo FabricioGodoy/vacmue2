@@ -1,146 +1,163 @@
-
-  
+/* Estilo moderno para NavBar */
 .header {
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 15vh;
-    background-color: #172933;
-    padding: 0 5px;
-    display: flex;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15vh;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
 }
 
-
- .logo {
-    width: 20vw;
-    height: auto;
-    padding: 3px;
-    margin: 0px 0px 0px 13px;
-    border-radius: 15px;
-    
-}
-/* .logo:hover {
-    transform: scale(1.03); 
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 12px 30px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s;
-    
-} */
-
-/* iconos contacto */
-.contact-buttons {
-    position: absolute;
-    bottom: 10px;
-    right: 35px;
-    display: flex;
-    gap: 10px;
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Esto pone logo a la izquierda y espacio entre logo y menú */
+  padding: 0.5rem 0rem;
+  width: 100%;
+  max-width: 1200px; /* opcional: para limitar ancho del navbar y centrarlo en pantalla grande */
+  margin: 0 auto;
 }
 
-.contact-icon {
-    width: 3vw;
-    height: 5vh;
-    margin: 3px;
-    color: white;
+.logo {
+  height: 90px;
+  width: auto;
+  margin: 0px 0px 0px 10px ;
+  object-fit: contain;
+}
+
+/* Links principales */
+.nav-links {
+  flex-grow: 1;           /* Que ocupe todo el espacio disponible */
+  display: flex;
+  justify-content: center; /* Centra los links */
+  gap: 2rem;
+  padding-bottom: 0.75rem;
+}
+
+.nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #0077cc;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0077cc;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.sticky {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón menú hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 20px;
+}
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+.hamburger.open div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
     display: flex;
-    align-items: center;
+  }
+
+  .header-top {
     justify-content: center;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.iconosContactoBN{
+  }
+  .logo{
+    margin: 10px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem 0;
+    gap: 1rem;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: none;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .nav-links.open,
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
+@media (max-width: 768px) and (orientation: landscape) {
+  nav {
+    padding: 0.5rem 1rem;
+  }
 
-.contact-icon:hover {
-    transform: scale(1.1);
-}
-.contact-icon img{
-    width: 2vw;
-    height: 3vh;
-}
+  .nav-links {
+    gap: 0.5rem;
+  }
 
-/* fin iconos contacto */
-
-
-@media (max-width: 1200px) {
-    .logo {
-        width: 25vw;
-    }
-}
-
-@media (max-width: 1000px) {
-    .logo {
-        width: 30vw;
-    }
-    .contact-icon {
-        width: 2vw;
-        height: 4vh;
-        margin: 1vw;
-    
-    }
-    .contact-icon img{
-        width: 100vw;
-        height: 3vh;
-    }
-
-}
-
-@media (max-width: 700px) {
-    .logo {
-        width: 40vw;
-    }
-    .contact-icon {
-        margin: 1vw;
-    }
-}
-
-@media (max-width: 600px) {
-    .logo {
-        width: 50vw;
-    }
-    .contact-icon {
-        bottom: -5px;
-        right: 15px;
-        gap: 1px;
-    }
-    .contact-icon .iconosContactoBN{
-        display: flex;
-        width: 5vw;
-        height: 4vh;
-        border-radius: 35%;
-        margin: 0;
-    }
-    .iconosContacto{
-        display: none;
-    }
-    .correoIconBN{
-        height: 5vh !important;
-    }
-    .contact-icon {
-        margin: 1.5vw;
-    }
-}
-@media (max-width: 430px) {
-    .contact-buttons {
-        bottom: -5px;
-        right: 15px;
-        gap: 1px;
-
-    }
-    .contact-icon  .iconosContactoBN{
-        width: 7vw;
-        height: 3vh;
-        margin: 20px !important;
-    }
-    .correoIconBN{
-        height: 4vh !important;
-    }
-    .contact-icon {
-        margin: 5px 3vw;
-    }
+  .nav-links a {
+    font-size: 14px;
+    padding: 0.25rem 0.5rem;
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { SobreNosotros } from '../components/sobreNosotros'
 
 // Componente individual para cada servicio
 const ServiceCard = ({ title, services, image }) => (
@@ -133,15 +134,18 @@ export const HomePage = () => {
 
   return (
     <div className='contenedorPadreHomePage'>
-      <div className="imgContainer">
+      {/* <div className="imgContainer">
         <img src="../../img/pcNegra.jpg" alt="pcNegra" className="imgPcNegra" />
         <div className="textOverlay">
           <div className="typingEffect">Soluciones Informáticas y Tecnológicas</div>
           <br />
           <p className='typingEffect-2'>¡Llevamos el concepto de <em>servicio</em> a otro nivel!</p>
         </div>
-      </div>
+      </div> */}
 
+      <SobreNosotros />
+
+      
       <h2 className="typingTitle">Nuestros servicios</h2>
       <div className='ordenarArticle'>
         {servicesData.map((service, index) => (
