@@ -82,7 +82,7 @@ export const HomePage = () => {
       title: 'Domicilio',
       image: 'https://img.icons8.com/external-tal-revivo-regular-tal-revivo/96/375f91/external-delivery-pin-for-parcel-delivery-location-making-delivery-regular-tal-revivo.png', 
       services: [
-        'Presidente Guido 1999, uenos Aires (1119) Argentina'
+        'Presidente Guido 1999, Buenos Aires (1119) Argentina'
       ]
     },
     {
