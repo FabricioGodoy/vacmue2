@@ -42,10 +42,12 @@ export const FormContacto = () => {
       <input type="text" name="surname" placeholder="Tu apellido" required/>
     </div>
     <div className="form-group form-row-double">
-      <input type="text" name="title" placeholder="Asunto" required/>
       <input type="email" name="email" placeholder="Tu email" required/>
+      <input type="number" name="celphone" placeholder="Telefono" />
     </div>
+
     <div className="form-group">
+      <input type="text" name="title" placeholder="Asunto" reqired/>
       <textarea name="message" placeholder="Tu mensaje" required/>
     </div>
     <input type="hidden" name="time" value={new Date().toLocaleString()} />
