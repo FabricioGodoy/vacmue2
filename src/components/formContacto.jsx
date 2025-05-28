@@ -38,17 +38,17 @@ export const FormContacto = () => {
     <div className="form-container">
   <form ref={form} onSubmit={sendEmail}>
     <div className="form-group form-row-double">
-      <input type="text" name="name" placeholder="Tu nombre" required />
-      <input type="text" name="surname" placeholder="Tu apellido" required/>
+      <input type="text" name="name" placeholder="Nombre" required />
+      <input type="text" name="surname" placeholder="Apellido" required/>
     </div>
     <div className="form-group form-row-double">
-      <input type="email" name="email" placeholder="Tu email" required/>
+      <input type="email" name="email" placeholder="Email" required/>
       <input type="number" name="celphone" placeholder="Telefono" />
     </div>
 
     <div className="form-group">
       <input type="text" name="title" placeholder="Asunto" reqired/>
-      <textarea name="message" placeholder="Tu mensaje" required/>
+      <textarea name="message" placeholder="Mensaje" required/>
     </div>
     <input type="hidden" name="time" value={new Date().toLocaleString()} />
     <button type="submit">Enviar</button>
