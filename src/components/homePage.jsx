@@ -1,6 +1,9 @@
 import React from 'react';
 import { SobreNosotros } from '../components/sobreNosotros'
 import { useEffect, useState } from 'react';
+import { ContenedorMapa } from './contenedorMapa';
+import { FormContacto } from './formContacto';
+
 
 // Componente individual para cada servicio
 const ServiceCard = ({ title, services, image }) => (
@@ -17,7 +20,7 @@ const ServiceCard = ({ title, services, image }) => (
 
 const ServiceCard2 = ({ title, services, image }) => (
   <div className="divArticle2">
-    <img width="24" height="24" src={image} alt={title} />
+    <img width="80" height="80" src={image} alt={title} />
     <h3>{title}</h3>
     <ul>
       {services.map((service, index) => {
@@ -28,7 +31,7 @@ const ServiceCard2 = ({ title, services, image }) => (
         } else if (title === 'Teléfono') {
           link = `tel:${service}`;
         } else if (title === 'Domicilio') {
-          link = 'https://www.google.com/maps?q=Av.+Cabildo+2847,+Ciudad+Autónoma+de+Buenos+Aires';
+          link = 'https://maps.app.goo.gl/8gFQdGMof8tgjSu9A';
         }
         return (
           <li key={index}>
@@ -77,14 +80,14 @@ export const HomePage = () => {
   const datosContacto = [
     {
       title: 'Domicilio',
-      image: 'https://img.icons8.com/fluency-systems-filled/50/map-marker.png', 
+      image: 'https://img.icons8.com/external-tal-revivo-regular-tal-revivo/96/375f91/external-delivery-pin-for-parcel-delivery-location-making-delivery-regular-tal-revivo.png', 
       services: [
         'Presidente Guido 1999, uenos Aires (1119) Argentina'
       ]
     },
     {
       title: 'Días y horarios de atención',
-      image: 'https://img.icons8.com/pastel-glyph/128/clock--v1.png', 
+      image: 'https://img.icons8.com/ios/100/375f91/clock--v1.png', 
       services: [
         'Lunes a Viernes de 14:00hs a 18:30hs'
       ]
@@ -128,7 +131,7 @@ useEffect(() => {
 
 <br/>
 
-      <SobreNosotros />
+
 
       
       <h2  id='servicios' className='typingTitle'>SERVICIOS</h2>
@@ -142,7 +145,9 @@ useEffect(() => {
           />
         ))}
       </div>
-    
+      <br/>
+      <br/>
+          <SobreNosotros />
       <h2  id='contactos' className='typingTitle'>Datos de contacto</h2>
       <div className='ordenarArticle2'>
         {datosContacto.map((service, index) => (
@@ -154,10 +159,16 @@ useEffect(() => {
           />
         ))}
       </div>
-      <a href="https://wa.me/+5491151010406" className="btn-flotante" target="_blank" rel="noopener noreferrer">
+      <br/>
+      <br/>
+      <FormContacto />
+      <br/>
+      <a href="https://wa.me/+5491152632378" className="btn-flotante" target="_blank" rel="noopener noreferrer">
         <img src="https://img.icons8.com/office/40/whatsapp--v1.png" alt="wpp"></img>
       </a>
-
+      <br/>
+      <br/>
+      <ContenedorMapa />
     </div>
   );
 };

@@ -9,6 +9,7 @@
 html {
   scroll-behavior: smooth;
    scroll-padding-top: 15vh;
+  overflow-x: hidden;
 }
 
 /* === Estructura General === */
@@ -189,6 +190,7 @@ html {
 .divArticle img, .divArticle2 img {
   margin-bottom: 5em;
   border-radius: 15px;
+  color: red;
 }
 
 .divArticle h3, .divArticle2 h3 {
