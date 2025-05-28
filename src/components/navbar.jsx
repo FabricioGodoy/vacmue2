@@ -47,6 +47,8 @@ export const NavBar = () => {
         <a href="#servicios" className="nav-link">Servicios</a>
         <a href="#contactos"className="nav-link">Contacto</a>
       </nav>
+      <br/>
+      
     </header>
   );
 };
