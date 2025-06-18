@@ -3,6 +3,8 @@ import { SobreNosotros } from '../components/sobreNosotros'
 import { useEffect, useState } from 'react';
 import { ContenedorMapa } from './contenedorMapa';
 import { FormContacto } from './formContacto';
+import { Intro } from './intro';
+import { Novedades } from './novedades';
 
 
 // Componente individual para cada servicio
@@ -53,27 +55,51 @@ const ServiceCard2 = ({ title, services, image }) => (
 export const HomePage = () => {
   const servicesData = [
     {
-      title: 'Diseño & Ingenieria',
+      title: 'Comercialización de Gas Natural',
       image: '../../img/iconos/genteReunida.jpg', 
       services: [
-        'Ingeniería Conceptual',
-        'Ingeniería Básica',
-        'Ingeniería de Detalle',
-        'Integración de Diseño & Ingeniería'
+        <>
+          Abastecimiento seguro, a medida y confiable de gas natural
+          <br />
+          <br />
+          Por nuestros contactos dentro del mercado, contamos con diversidad de productores quienes nos abastecen gas natural de todas las cuencas, manteniendo una cartera variada para asegurar el abastecimiento en todo momento de las necesidades de nuestros clientes.  
+          <br />
+          <br />
+          Vendemos gas natural a usuarios industriales, estaciones de GNC, comercios, y los asesoramos a medida de sus necesidades, buscando el mayor beneficio para el cliente. El objetivo siempre está en conseguir las mejores condiciones, desde las condiciones comerciales hasta el mejor momento adecuado para la contratación.
+          <br/>
+          <br/>
+          Asimismo, participamos activamente del mercado SPOT diario, semanal y mensual para llevar alternativas a nuestros clientes y otros actores de la industria, buscando la eficiencia y menores costos.
+
+
+        </>
       ]
     },
     {
-      title: 'Gestión Ambiental',
+      title: 'Comercialización de Energía Eléctrica',
       image: '../../img/iconos/lamparaReciclar.jpg', 
       services: [
-        'Gestión Ambiental (Environmental Management)'
+        <>
+          Participamos en el mercado eléctrico, nuestra experiencia nos permite acercarle a los clientes una propuesta de abastecimiento de energía renovable y asesoramiento respecto a los proyectos renovables que puedan significar un paso adelante en cuanto a sustentabilidad, y ahorros de costos futuros.
+        </>
       ]
     },
     {
-      title: 'Ejecución & Construcción',
+      title: 'Servicios de comercialización y despacho',
       image: '../../img/iconos/rayoEngranaje.jpg', 
       services: [
-        'EPC (Engineering, Procurement and Constructions).'
+        'Para productores.',
+        'Para consumidores industriales.',
+        'Brindamos servicios de comercialización y despacho a productores y consumidores industriales, de modo tal de asegurar la correcta asignación de volúmenes y evitar cortes o multas por desbalances o incumplimientos regulatorios.'
+      ]
+    },
+    {
+      title: 'Servicios de consultoría integral',
+      image: '../../img/iconos/trabajadores.png',
+      services: [
+        'Energética',
+        'Ingeniería',
+        'Medio ambiente',
+        'EPC'
       ]
     }
   ];
@@ -92,7 +118,7 @@ export const HomePage = () => {
         'Lunes a Viernes de 14:00hs a 18:30hs'
       ]
     },
-  ]
+  ] 
 
 const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -106,24 +132,25 @@ useEffect(() => {
   return (
     <div className='contenedorPadreHomePage'>
       <div className="carousel">
+          <Intro />
         <div className="slides" style={{ transform: `translateX(-${currentSlide * 100}vw)` }}>
 
           <div className="slide active">
             <img src="../../img/carrousel/canosDia.png" alt="Caños de día" />
             <div className="textOverlay">
-              <h2 className="slideTitle">Distribución de Energía</h2>
+            {/*   <h2 className="slideTitle">Distribución de Energía</h2> */}
             </div>
           </div>
           <div className="slide">
             <img src="../../img/carrousel/plantaVME.png" alt="Planta VME" />
             <div className="textOverlay">
-              <h2 className="slideTitle">Procesamiento de Gas Natural</h2>
+              {/* <h2 className="slideTitle">Procesamiento de Gas Natural</h2> */}
             </div>
           </div>
           <div className="slide">
             <img src="../../img/carrousel/canosNoche.png" alt="Caños de noche" />
             <div className="textOverlay">
-              <h2 className="slideTitle">Conectividad Nocturna</h2>
+              {/* <h2 className="slideTitle">Conectividad Nocturna</h2> */}
             </div>
           </div>
         </div>
@@ -148,20 +175,27 @@ useEffect(() => {
       <br/>
       <br/>
           <SobreNosotros />
-      <h2  id='contactos' className='typingTitle'>Datos de contacto</h2>
+
+          <br/>
+          <br/>
+            <h1 className='NovedadesTitulo'>Novedades</h1>
+          <Novedades />
+
+      <h2  id='contactos' className='typingTitle'>Contacto</h2>
       <div className='ordenarArticle2'>
         {datosContacto.map((service, index) => (
           <ServiceCard2
-            key={index}
-            title={service.title}
-            services={service.services}
+          key={index}
+          title={service.title}
+          services={service.services}
             image={service.image} 
           />
         ))}
+          <FormContacto />
       </div>
       <br/>
       <br/>
-      <FormContacto />
+
       <br/>
       <a href="https://wa.me/+5491152632378" className="btn-flotante" target="_blank" rel="noopener noreferrer">
         <img src="https://img.icons8.com/office/40/whatsapp--v1.png" alt="wpp"></img>

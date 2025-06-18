@@ -29,6 +29,7 @@ html {
   height: 60vh;
   overflow: hidden;
   margin: auto;
+  /* height: auto; */
 }
 
 .slides {
@@ -135,6 +136,7 @@ html {
   color: black;
   text-align: center;
   margin-bottom: 1em;
+  margin-top:10px;
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -154,6 +156,10 @@ html {
   justify-content: center;
   flex-wrap: wrap;
 }
+/* .ordenarArticle{
+  height: 70vh;
+  overflow: scroll;
+} */
 
 .ordenarArticle2 {
   flex-wrap: nowrap;
@@ -178,6 +184,8 @@ html {
   justify-content: flex-start;
   line-height: 1.6;
   width: calc(22% - 1.5em);
+  height: 85vh;
+  overflow-y : auto ;
 }
 
 .divArticle2 {
@@ -185,6 +193,8 @@ html {
   line-height: 1.2;
   width: calc(33.333% - 1.5em);
   text-align: center;
+      height: 50vh;
+    margin-top: 14vh;
 }
 
 .divArticle img, .divArticle2 img {
@@ -280,9 +290,15 @@ html {
   .divArticle2 li a[href^="mailto:"] { font-size: 15px; }
 }
 
+@media (max-width: 1100px) {.carousel{height: 70vh;}}
+
+
+
+
 @media (max-width: 1000px) {
-  .ordenarArticle2 { flex-wrap: wrap; gap: 1; }
+/*   .ordenarArticle2 { flex-wrap: wrap; gap: 1; } */
   .divArticle2 li a[href^="mailto:"] { font-size: 16px; }
+  .carousel{height: 80vh;}
 }
 
 @media (max-width: 950px) {
@@ -293,12 +309,16 @@ html {
 
 @media (max-width: 860px) {
   .divArticle2 li a[href^="mailto:"] { font-size: 13px; }
+  
   .btn-flotante { font-size: 11px; }
+  .carousel{height: 75vh;}
+  .intro-overlay { top: 10%; }
 }
 
 @media (max-width: 768px) {
   .divArticle { width: 40%; line-height: 1.4; font-size: 15px; }
-  .divArticle2 { width: 35%; }
+   .ordenarArticle2 { flex-wrap: wrap; gap: 1; }
+  .divArticle2 { width: 35%;height:auto; }
   .contenedorPadreHomePage { padding: 1em; margin-top: 20vh; }
   .typingTitle { font-size: 30px; }
   .btn-flotante { font-size: 10px; }
@@ -317,6 +337,13 @@ html {
     justify-content: center;
     margin: auto;
   }
+   .carousel{height: 85vh;}
+
+}
+
+@media (max-width: 550px) {
+   .carousel{height: 95vh;}
+
 }
 
 @media (max-width: 500px) {
@@ -324,11 +351,15 @@ html {
   .textOverlay { width: 90vw; }
   .typingEffect { font-size: 17px; }
   .typingEffect-2 { font-size: 14px; font-weight: 500; margin-top: -15px; }
+   .carousel{height: 100vh;}
+
 }
 
 @media (max-width: 450px) {
   .typingEffect { font-size: 14px; }
   .typingEffect-2 { font-size: 12px; }
+   .carousel{height: 115vh;}
+
 }
 
 @media (max-width: 400px) {
@@ -336,12 +367,14 @@ html {
   .typingEffect { font-size: 13px; }
   .typingEffect-2 { font-size: 11px; }
   .typingTitle { font-size: 25px; }
+  .carousel{height: 117vh;}
 }
 
 @media (max-width: 350px) {
   .textOverlay { width: 90vw; }
   .typingEffect { font-size: 11px; }
   .typingEffect-2 { font-size: 9px; }
+  .carousel{height: 125vh;}
 }
 
 @media (max-width: 330px) {

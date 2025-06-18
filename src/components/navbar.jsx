@@ -45,6 +45,7 @@ export const NavBar = () => {
         <a href="/" className="nav-link">Inicio</a>
         <a href="#nosotros" className="nav-link">Sobre Nosotros</a>
         <a href="#servicios" className="nav-link">Servicios</a>
+        <a href="#novedades"className="nav-link">Novedades</a>
         <a href="#contactos"className="nav-link">Contacto</a>
       </nav>
       <br/>

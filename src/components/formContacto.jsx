@@ -47,7 +47,7 @@ export const FormContacto = () => {
     </div>
 
     <div className="form-group">
-      <input type="text" name="title" placeholder="Asunto" reqired/>
+      <input type="text" name="title" placeholder="Tipo y n ombre de empresa" reqired/>
       <textarea name="message" placeholder="Mensaje" required/>
     </div>
     <input type="hidden" name="time" value={new Date().toLocaleString()} />

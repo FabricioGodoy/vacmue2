@@ -9,22 +9,15 @@ export const SobreNosotros = () => {
             <h1>NOSOTROS</h1>
 
             <div>
-                <p>A fines de la década del 90, iniciamos nuestra historia, incursionando en obras de electricidad, fibra óptica y arquitectura, participando en proyectos con altos niveles de exigencia y cumplimiento de estándares internacionales.
-                <br/>
-                <br/>
-                Ya en 2008 nos introducimos en el sector del Oil and Gas participando en obras de piping y pipeline, realizando gasoductos, plantas compresoras y de regulación, líneas de transmisión y distribución e instalaciones industriales de magnitud.
-                <br/>
-                <br/>
-                Pocos años después, incorporamos nuevas especialidades: saneamiento (agua, cloacas) y movimientos de suelos, ejecutando obras icónicas y de alta complejidad por sus prestaciones y ubicaciones en varias provincias argentinas.
-                <br/>
-                <br/>
-                En 2019 y con la incorporación de renombrados profesionales con vasta experiencia en el desarrollo de Ingeniería, Ejecución y Gerenciamiento de Proyectos, nace Multipiping Argentina y Multipiping Chile, con oficinas en Mendoza, Neuquén, Buenos Aires y Santiago de Chile para brindar nuevos servicios a los ya ofrecidos a los sectores del Oil and Gas, Energía, Infraestructura, Agua y Saneamiento, Minería, Medio Ambiente, Alimentación y Plantas Industriales, mediante la aplicación de nuevos conceptos, tecnologías y estándares internacionales.
-                <br/>
-                <br/>
-                A fines de 2.022 abrimos oficinas en Santa Cruz de La Sierra, Bolivia, y hoy nuestro crecimiento no para, el grupo multipiping está presente en Vancouver, en Sao Paulo y en Madrid, ampliando nuestra actividad e incursionando en Mineria, Operación de Oil & Gas, Desarrollos Inmobiliarios, Comercialización de Energía y producción y exportación de Alimentos y Bebidas.
-                <br/>
-                <br/>
-                En julio de 2.023 Multipiping midió su huella de carbono y hoy es una de las instituciones que se suman de manera global a reducir su impacto ambiental y realizar acciones concretas frente al cambio climático, implantando 50 ha de bosques nativos en el Noroeste Argentino.</p>
+                <p>
+                  Somos una comercializadora de gas natural con profesionales de primer nivel, con más de 20 años de trayectoria en el mercado energético. A lo largo del tiempo, hemos participamos de toda la cadena de valor del gas natural, desde el desarrollo de proyectos, servicios petroleros, producción, comercialización, transporte y consumo industrial. Confiamos en que el conocimiento integral de la industria permite un salto de nivel en cuanto al asesoramiento a nuestros clientes.
+                  <br/>
+                  Somos profesionales con sólidos contactos con todos los productores del país en sus distintas cuencas, y participamos en este competitivo mercado con la pasión de ofrecer un servicio de excelencia. Desde el primer momento, nos enfocamos en averiguar las necesidades de cada cliente en cuanto a abastecimiento, consultoría energética, industrial y medioambiental.
+                  <br/>
+                  Asimismo, participamos en la comercialización de energía renovable y ofrecemos a nuestros clientes certificados I-REC como un primer paso hacia sustentabilidad de sus operaciones.
+                  <br/>
+                  Tenemos especialistas para cada área de atención, EPC, servicios petroleros, operaciones de campos, comercialización, gestión de licitaciones, gestión de transportes, combustibles alternativos. Brindamos consultoría en todas las áreas trasversalmente a los negocios de nuestros clientes y acompañamos sus proyectos. 
+               </p>
            
             </div>
         </div>
