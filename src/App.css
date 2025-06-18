@@ -10,6 +10,7 @@ html {
   scroll-behavior: smooth;
    scroll-padding-top: 15vh;
   overflow-x: hidden;
+  
 }
 
 /* === Estructura General === */
@@ -155,11 +156,9 @@ html {
   gap: 1.5em;
   justify-content: center;
   flex-wrap: wrap;
+  font-size: 13px;
 }
-/* .ordenarArticle{
-  height: 70vh;
-  overflow: scroll;
-} */
+
 
 .ordenarArticle2 {
   flex-wrap: nowrap;
@@ -184,7 +183,7 @@ html {
   justify-content: flex-start;
   line-height: 1.6;
   width: calc(22% - 1.5em);
-  height: 85vh;
+  height: 65vh;
   overflow-y : auto ;
 }
 
@@ -226,7 +225,7 @@ html {
 
 .divArticle li, .divArticle2 li {
   margin-bottom: 0.5em;
-  font-size: 1.3em;
+  font-size: 15px
 }
 
 .divArticle2 li a[href^="mailto:"] {
@@ -329,7 +328,7 @@ html {
 }
 
 @media (max-width: 650px) {
-  .divArticle { width: 47%; }
+  .divArticle { width: 47%;}
   .divArticle2 { width: 45%; }
   .typingEffect, .typingEffect-2 {
     display: flex;
